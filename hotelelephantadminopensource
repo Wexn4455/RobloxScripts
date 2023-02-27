@@ -1,10 +1,4 @@
---[[
- Hotel Elephant Admin Commands By Wexn
-
- For Commands Press F9  (Alternative :cmds)
-]]--
-
-print("\nHotel Elephant Admin Commands By Wexn\n\n\n :elevator # (Elevator Floor Changer MAX 6)\n\n :getroom # (If the room empty u can get with command MAX 8 [u will not get key and u can get multiple rooms])\n\n :door # (door opener closer MAX 8 [It can open balcony door sometimes])\n\n :spawnjetski\n:spawnboat\n:spawntransporter (:spawnjetski spawns Jet Ski :spawnboat spawns Dinghy :spawntransporter spawns Transporter Boat)\n\n :infmoney (Gives u 1.000 Billion Cash)\n\n\n :cmds (shows commands)")
+print("\nHotel Elephant Admin Commands By Wexn\n\n\n :elevator # (Elevator Floor Changer MAX 6)\n\n :getroom # (If the room empty u can get with command MAX 8 [u will not get key and u can get multiple rooms])\n\n :door # (door opener closer MAX 8 [It can open balcony door sometimes])\n\n :spawnjetski\n:spawnboat\n:spawntransporter (:spawnjetski spawns Jet Ski :spawnboat spawns Dinghy :spawntransporter spawns Transporter Boat)\n\n :infmoney (Gives u 1.000 Billion Cash)\n\n :team (Neutral team thing yes its FE)\n\n\n :cmds (shows commands)")
 
 game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
 
@@ -20,7 +14,16 @@ game:GetService("ReplicatedStorage"):WaitForChild("MoneyRequest"):FireServer(unp
 end
 
 if (string.lower(msg) == ":cmds") then
-print("\nHotel Elephant Admin Commands By Wexn\n\n\n :elevator # (Elevator Floor Changer MAX 6)\n\n :getroom # (If the room empty u can get with command MAX 8 [u will not get key and u can get multiple rooms])\n\n :door # (door opener closer MAX 8 [It can open balcony door sometimes])\n\n :spawnjetski\n:spawnboat\n:spawntransporter (:spawnjetski spawns Jet Ski :spawnboat spawns Dinghy :spawntransporter spawns Transporter Boat)\n\n :infmoney (Gives u 1.000 Billion Cash)\n\n\n :cmds (shows commands)")
+ print("\nHotel Elephant Admin Commands By Wexn\n\n\n :elevator # (Elevator Floor Changer MAX 6)\n\n :getroom # (If the room empty u can get with command MAX 8 [u will not get key and u can get multiple rooms])\n\n :door # (door opener closer MAX 8 [It can open balcony door sometimes])\n\n :spawnjetski\n:spawnboat\n:spawntransporter (:spawnjetski spawns Jet Ski :spawnboat spawns Dinghy :spawntransporter spawns Transporter Boat)\n\n :infmoney (Gives u 1.000 Billion Cash)\n\n :team (Neutral team thing yes its FE)\n\n\n :cmds (shows commands)")
+end
+
+if (string.lower(msg) == ":team") then
+        local args = {
+                [1] = "blue"
+            }
+            
+            game:GetService("ReplicatedStorage"):WaitForChild("ChangeTeam"):InvokeServer(unpack(args))
+            
 end
 
 if (string.lower(msg) == ":door 1") then
